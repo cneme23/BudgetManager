@@ -1,8 +1,13 @@
+import Question from "./components/Question";
 
 function App() {
   return (
-    <div className="App">
-     <h1>Presupuesto</h1>
+    <div className="container">
+     <header>
+      <h1>Weekly Budget</h1>
+      <div><Question/></div>
+     </header>
+     
     </div>
   );
 }
