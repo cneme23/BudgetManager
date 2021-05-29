@@ -1,9 +1,11 @@
 import React, {useState} from "react";
+import Error from "./Error";
 
 const Form = () => {
     
     const [name,saveName]= useState("");
     const [quantity, saveQuantity]= useState(0);
+    const [error, saveError]= useState(false);
     
 
 //Aqui vamos a hacer una funcion para que el usuario agregue el gasto
@@ -13,6 +15,13 @@ const addExpense = e => {
 }
 
 //Aqui vamos a hacer la validacion 
+if(quantity < 1 || isNaN(quantity)|| name.trim()=== ""){
+    saveError(true);
+    return;
+}
+saveError(false);
+
+
 
 //Aqui vamos a construir el gasto
 
@@ -22,7 +31,9 @@ const addExpense = e => {
 
     return(
         <form>
-            <h2>Agrega tus gastos aquí</h2>
+            <h2>Add your expenses here</h2>
+
+            {error ? <Error message="Both imputs are obligatory or wrong budget" /> : null}
 
             <div className="campo">
                 <label>Expense type</label>
