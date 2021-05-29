@@ -12,6 +12,12 @@ function App() {
 const [budget, saveBudget]= useState(0);
 const [remain, saveRemain]=useState(0);
 
+//Ahora vamos a hacer el estado para mostrar o no el componente Question
+
+const [showquestion,updateQuestion]=useState(true);
+
+
+
   
   return (
     <div className="container">
@@ -20,13 +26,15 @@ const [remain, saveRemain]=useState(0);
       <div className="contenido-principal contenido">
         {/* Aca le paso por props las funciones que se van a encargar de cambiar el estado.
         Ahora tendriamos en el componente question ambas funciones para usar */}
-        <Question 
+
+{ showquestion ? (
+  <Question 
           saveBudget={saveBudget} 
           saveRemain={saveRemain}
+          updateQuestion={updateQuestion}
         />
-      
-
-    <div className="row">
+) : (
+<div className="row">
         <div className= "one-half column">
             <Form/>
         </div>
@@ -36,6 +44,10 @@ const [remain, saveRemain]=useState(0);
         </div>
 
       </div>
+)
+
+}
+   
     </div>
      </header>
      

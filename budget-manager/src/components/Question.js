@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Error from "./Error";
 
-const Question = ({saveBudget,saveRemain}) => {
+const Question = ({saveBudget,saveRemain,updateQuestion}) => {
     
     //Aca definimos el primer State. Inicialmente va a estar en 0
     const [quantity,saveQuantity] = useState(0);
@@ -27,13 +27,15 @@ const Question = ({saveBudget,saveRemain}) => {
         return; 
     }
 
-    //Si pasa la validacion van a pasar 3 cosas:
+    //Si pasa la validacion van a pasar 4 cosas:
     //A-No se va a guardar el error
     //B-Se guarda la cantidad de $ dispo
     //C- Se guarda lo que queda disponible como plata restante
+    //D- Se deja de mostrar la pantalla del presupuesto inicial
     saveError(false);
     saveBudget(quantity);
     saveRemain(quantity);
+    updateQuestion(false);
     
     }
     
