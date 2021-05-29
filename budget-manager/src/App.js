@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import Question from "./components/Question";
+import Form from "./components/Form"
 
 
 
@@ -21,8 +22,21 @@ const [remain, saveRemain]=useState(0);
         Ahora tendriamos en el componente question ambas funciones para usar */}
         <Question 
           saveBudget={saveBudget} 
-          saveRemain={saveRemain}/>
+          saveRemain={saveRemain}
+        />
+      
+
+    <div className="row">
+        <div className= "one-half column">
+            <Form/>
+        </div>
+
+        <div className= "one-half column">
+            2
+        </div>
+
       </div>
+    </div>
      </header>
      
     </div>
