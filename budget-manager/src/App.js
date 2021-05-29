@@ -15,8 +15,16 @@ const [remain, saveRemain]=useState(0);
 //Ahora vamos a hacer el estado para mostrar o no el componente Question
 
 const [showquestion,updateQuestion]=useState(true);
+const [expenses,saveExpenses]=useState([]);
 
 
+//Aca definimos una funcion que se va a ejecutar cuando agreguemos un nuevo gasto
+
+const addingNewExpense= expense => {
+saveExpenses([
+  ...expenses,expense
+])
+}
 
   
   return (
@@ -35,7 +43,9 @@ const [showquestion,updateQuestion]=useState(true);
 ) : (
 <div className="row">
         <div className= "one-half column">
-            <Form/>
+            <Form
+            addingNewExpense={addingNewExpense}
+            />
         </div>
 
         <div className= "one-half column">

@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import Error from "./Error";
+import shortid from "shortid";
 
-const Form = () => {
+const Form = ({addingNewExpense}) => {
     
     const [name,saveName]= useState("");
     const [quantity, saveQuantity]= useState(0);
@@ -24,10 +25,20 @@ saveError(false);
 
 
 //Aqui vamos a construir el gasto
+const expense = {
+    name,
+    quantity,
+    //Aca vamos a generar un short id para idenificar a cada gasto
+    id:shortid.generate()
+}
+
 
 //Aqui vamos a pasar el gasto al componente principal
-
+addingNewExpense(expense);
 //Aqui vamos a resetear al form
+
+saveName("");
+saveQuantity(0);
 
     return(
         <form>
