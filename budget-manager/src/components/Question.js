@@ -27,7 +27,10 @@ const Question = ({saveBudget,saveRemain}) => {
         return; 
     }
 
-    //Si pasa la validacion
+    //Si pasa la validacion van a pasar 3 cosas:
+    //A-No se va a guardar el error
+    //B-Se guarda la cantidad de $ dispo
+    //C- Se guarda lo que queda disponible como plata restante
     saveError(false);
     saveBudget(quantity);
     saveRemain(quantity);
