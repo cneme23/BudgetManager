@@ -24,8 +24,7 @@ const [showquestion,updateQuestion]=useState(true);
      <header>
       <h1>Weekly Budget</h1>
       <div className="contenido-principal contenido">
-        {/* Aca le paso por props las funciones que se van a encargar de cambiar el estado.
-        Ahora tendriamos en el componente question ambas funciones para usar */}
+        {/* Aca vamos a usar componentes condicionales, en caso de agregue el presupuesto voy a mostrar algo , sino no  */}
 
 { showquestion ? (
   <Question 
