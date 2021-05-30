@@ -13,7 +13,7 @@ const Form = ({addingNewExpense}) => {
 
 const addExpense = e => {
     e.preventdefault();
-}
+
 
 //Aqui vamos a hacer la validacion 
 if(quantity < 1 || isNaN(quantity)|| name.trim()=== ""){
@@ -40,8 +40,11 @@ addingNewExpense(expense);
 saveName("");
 saveQuantity(0);
 
+}
     return(
-        <form>
+        <form
+            onSubmit={addExpense}
+        >
             <h2>Add your expenses here</h2>
 
             {error ? <Error message="Both imputs are obligatory or wrong budget" /> : null}
@@ -64,7 +67,7 @@ saveQuantity(0);
                        className="u-full-width"
                        placeholder="ex.300"
                        value={quantity}
-                       onChage={e => saveQuantity(parseInt (e.target.value,10))}
+                       onChange={e => saveQuantity(parseInt (e.target.value,10))}
                 />
             </div>
 

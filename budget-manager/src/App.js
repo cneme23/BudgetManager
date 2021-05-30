@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import Question from "./components/Question";
 import Form from "./components/Form"
-
+import ExpensesList from "./components/ExpensesList";
 
 
 function App() {
@@ -20,7 +20,7 @@ const [expenses,saveExpenses]=useState([]);
 
 //Aca definimos una funcion que se va a ejecutar cuando agreguemos un nuevo gasto
 
-const addingNewExpense= expense => {
+const addingNewExpense = expense => {
 saveExpenses([
   ...expenses,expense
 ])
@@ -34,14 +34,15 @@ saveExpenses([
       <div className="contenido-principal contenido">
         {/* Aca vamos a usar componentes condicionales, en caso de agregue el presupuesto voy a mostrar algo , sino no  */}
 
-{ showquestion ? (
+{ showquestion ?
+ (
   <Question 
           saveBudget={saveBudget} 
           saveRemain={saveRemain}
           updateQuestion={updateQuestion}
         />
-) : (
-<div className="row">
+      ) : (
+       <div className="row">
         <div className= "one-half column">
             <Form
             addingNewExpense={addingNewExpense}
@@ -49,7 +50,9 @@ saveExpenses([
         </div>
 
         <div className= "one-half column">
-            2
+            <ExpensesList
+            expenses={expenses}
+            />
         </div>
 
       </div>
