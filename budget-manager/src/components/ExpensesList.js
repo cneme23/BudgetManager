@@ -1,5 +1,6 @@
 import React from "react";
 import Expense from "./Expense";
+import PropTypes from "prop-types";
 
 const ExpensesList = ({expenses}) => {
 return(
@@ -15,5 +16,7 @@ return(
     </div>
 )
 }
+
+
 
 export default ExpensesList;
