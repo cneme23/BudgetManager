@@ -24,7 +24,7 @@
 ## 🚀 Installation
 
 ```
-$ git clone https://github.com/cneme23/PetShopAppointmentApp.git
+$ git clone https://github.com/cneme23/BudgetManager.git
 $ cd BudgetManager/budget-manager
 $ npm install
 $ npm start
