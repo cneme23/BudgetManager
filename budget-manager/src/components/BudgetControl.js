@@ -1,4 +1,5 @@
 import React from "react";
+import {budgetReview } from "../helpers";
 const BudgetControl =({budget,remain}) => {
     return (
         <>
@@ -7,7 +8,7 @@ const BudgetControl =({budget,remain}) => {
 
         </div>
 
-        <div className="alert">
+        <div className={budgetReview(budget,remain)}>
 
         Remain: {remain}
  

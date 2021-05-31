@@ -37,7 +37,7 @@ saveRemain(remainBudget);
   
 saveCreateExpense(false)
 }
-},[expense]);
+},[expense,createxpense,expenses,remain]);
 
 
 //Aca definimos una funcion que se va a ejecutar cuando agreguemos un nuevo gasto
