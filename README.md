@@ -4,7 +4,7 @@
 <a href="https://epic-nobel-6e19d0.netlify.app/">
 <img src="./main.png"/>
                              </a>
-<p align="center">A simple, Veterinary appointment application built with React and Hooks 📋. You can create & delete an appointment with it</p>
+<p align="center">This is a budget manager app that allows you to set a certain initial amount of money , and let you control your expenses </p>
 
 ## 🛠️ Technologies
 
