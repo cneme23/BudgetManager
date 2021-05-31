@@ -17,6 +17,8 @@ return(
 )
 }
 
-
+ExpensesList.propTypes = {
+    expenses: PropTypes.array.isRequired
+}
 
 export default ExpensesList;
