@@ -12,7 +12,7 @@ const Form = ({saveExpense,saveCreateExpense}) => {
 //Aqui vamos a hacer una funcion para que el usuario agregue el gasto
 
 const addExpense = e => {
-    e.preventdefault();
+    e.preventDefault();
 //Aqui vamos a hacer la validacion 
 if(quantity < 1 || isNaN(quantity)|| name.trim()=== ""){
     saveError(true);

@@ -16,7 +16,7 @@ const Expense = ({expense}) => {
     )
 }
 
-Expense.PropTypes = {
+Expense.propTypes = {
     expense : PropTypes.object.isRequired
 }
 
