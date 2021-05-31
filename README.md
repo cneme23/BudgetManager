@@ -25,7 +25,7 @@
 
 ```
 $ git clone https://github.com/cneme23/PetShopAppointmentApp.git
-$ cd petShopApp/PetShopAppointmentApp
+$ cd BudgetManager/budget-manager
 $ npm install
 $ npm start
 ```
