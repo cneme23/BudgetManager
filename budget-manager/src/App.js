@@ -1,7 +1,8 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import Question from "./components/Question";
 import Form from "./components/Form"
 import ExpensesList from "./components/ExpensesList";
+import BudgetControl from "./components/BudgetControl";
 
 
 function App() {
@@ -16,15 +17,31 @@ const [remain, saveRemain]=useState(0);
 
 const [showquestion,updateQuestion]=useState(true);
 const [expenses,saveExpenses]=useState([]);
+const [expense, saveExpense]=useState({});
+const [createxpense,saveCreateExpense]= useState(false);
+
+//UseEffect que actualice el restatnte
+
+useEffect( () => {
+  if(createxpense){
+
+//Agrega el nuevo presupuesto
+  saveExpenses([
+    ...expenses,expense
+  ]);
+
+  //Resta del presupuesto actual
+const remainBudget = remain - expense.quantity;
+saveRemain(remainBudget);
+
+  
+saveCreateExpense(false)
+}
+},[expense]);
 
 
 //Aca definimos una funcion que se va a ejecutar cuando agreguemos un nuevo gasto
 
-const addingNewExpense = expense => {
-saveExpenses([
-  ...expenses,expense
-])
-}
 
   
   return (
@@ -45,7 +62,8 @@ saveExpenses([
        <div className="row">
         <div className= "one-half column">
             <Form
-            addingNewExpense={addingNewExpense}
+            saveExpense={saveExpense}
+            saveCreateExpense={saveCreateExpense}
             />
         </div>
 
@@ -53,6 +71,11 @@ saveExpenses([
             <ExpensesList
             expenses={expenses}
             />
+
+            <BudgetControl
+              budget={budget}
+              remain={remain}
+              />
         </div>
 
       </div>
