@@ -1,5 +1,5 @@
 
-# <div align="center">📋 Veterinary Appointment App</div>
+# <div align="center">📋 Budget Manager App</div>
 
 <a href="https://epic-nobel-6e19d0.netlify.app/">
 <img src="./main.png"/>
