@@ -1,4 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
+import {budgetReview} from "../helpers"
+
 
 const Expense = ({expense}) => {
     return (
@@ -13,5 +16,8 @@ const Expense = ({expense}) => {
     )
 }
 
+Expense.PropTypes = {
+    expense : PropTypes.object.isRequired
+}
 
 export default Expense;
